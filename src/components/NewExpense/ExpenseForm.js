@@ -19,6 +19,10 @@ const ExpenseForm = () => {
           ...userInput,
           enteredTitle: event.target.value,
         })
+        //alt/preffered way of doing this
+        setUserInput((prevState) => {
+          return{...prevState, enteredTitle: event.target.value};
+        })
     }
 
     const amountChangeHandler = (event) => {
