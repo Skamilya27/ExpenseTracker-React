@@ -5,7 +5,7 @@ import './Expenses.css';
 function Expenses(props) {
   return (
     <Card className="expenses">
-      <ExpenseItem
+      {/* <ExpenseItem
         title={props.items[0].title}
         amount={props.items[0].amount}
         date={props.items[0].date}
@@ -24,7 +24,16 @@ function Expenses(props) {
         title={props.items[3].title}
         amount={props.items[3].amount}
         date={props.items[3].date}
-      />
+      /> */}
+
+      {props.items.map((expense) => (
+        <ExpenseItem 
+            key={expense.id}
+            title={expense.title}
+            amount={expense.amount}
+            date={expense.date}
+        />
+      ))}
     </Card>
   );
 }
